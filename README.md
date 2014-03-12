@@ -47,7 +47,7 @@ supervisor app.js
 ## Nitrous Setup Instructions
 
 ### Configure a Nitrous box with github
-- Go to http://nitrous.io
+- Go to <http://nitrous.io>
 - Sign up for an account and login
 - Choose to create a nodejs box, and give it a name, i.e. username-nodejs
 - At the top of the page, click the N20 status bar icon to add account settings
@@ -56,12 +56,12 @@ supervisor app.js
 - Choose your box and click "IDE" to launch the Nitrous IDE.
 
 ### Clone the pooch madness repo
-- Go to github.com/statbit/pooch\_madness
+- Go to github.com/statbit/pooch_madness
 - Click "Fork" to fork the repo under your own github account.
 - In the Nitrous console, type:
 
 ```
-git clone https://github.com/username/pooch\_madness.git workspace
+git clone https://github.com/username/pooch_madness.git workspace
 ```
 
 ```
@@ -69,7 +69,7 @@ cd workspace
 ```
 
 ```
-git remote add upstream https://github.com/username/pooch\_madness.git
+git remote add upstream https://github.com/username/pooch_madness.git
 ```
 
 ```
