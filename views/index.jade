@@ -1,25 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+      .container
+        .navbar-header
+          a.navbar-brand Pooch Madness!
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.signup-btn
+              if name
+                Hi #{name}
+                  a.btn-lg.btn-primary(href='/signout') Sign out
+              else
+                a.btn-lg.btn-primary(href='/signup') Sign up
 
-  .match.container
-    .row
-      .col-lg-4
-        if name
-          p 
-            Hi #{name}
-            a.btn.btn-lg.btn-primary(href='/signout') Sign out
-        else
-          p
-            a.btn.btn-lg.btn-primary(href='/signup') Sign up
-
-    .row
-      each dog in dogs
-        .col-lg-4
-          h2= dog.name
-          .puppy
-            img(src=dog.image width=180)
-
+    .match.container
+      .row.dogs
+        each dog in dogs
+          .col-lg-4.col-md-4
+              .panel.panel-info
+                  .panel-heading
+                      h1.panel-title= dog.name
+                  .panel-body(style="background-image: url('"+dog.image+"')")
 
