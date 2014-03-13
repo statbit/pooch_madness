@@ -2,36 +2,46 @@ extends layout
 
 block content
 
-  .match.container
-    h1 Sign up or sign in to donate
-    .row
-      .col-lg-6
-        form(method="post" action="/signup")
-          h2 You new here?
-          h4 Sign up!
-          .form-group
-            .input-group
-              label(for='name') Your Name
-              input(name='name').form-control.name
-              if (signup && signup.error && signup.error.name)
-                .error=signup.error.name
-            .input-group
-              label(for='password') Your (not so) Secret Passord
-              input(name='password' type='password').form-control.password
-              if (signup && signup.error && signup.error.password)
-                .error=signup.error.password
-            button(type='submit').btn.btn-default Sign Up
-      .col-lg-6
-          form(method="post" action="/signin")
-            h2 Already a member?
-            h4 Sign in!
-            .form-group
-              if (signin && signin.error)
-                .error=signin.error
-              .input-group
+    nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+      .container
+        .navbar-header
+            a.navbar-brand Pooch Madness!
+        .collapse.navbar-collapse.navbar-ex1-collapse
+            ul.nav.navbar-nav.navbar-right
+                li.signup-btn
+                    if name
+                        Hi #{name}
+                            a.btn-lg.btn-primary(href='/signout') Sign out
+                    else
+                        a.btn-lg.btn-primary(href='/signup') Sign up
+
+
+    .match.container.signups
+        .row
+          .col-lg-6
+            h2 Sign up
+            form(method="post" action="/signup" role="form").form-horizontal
+              .form-group.col-lg-12
                 label(for='name') Your Name
                 input(name='name').form-control.name
-              .input-group
-                label(for='password') Your (not so) Secret Password
+                if (signup && signup.error && signup.error.name)
+                  .error=signup.error.name
+              .form-group.col-lg-12
+                label(for='password') Your (not so) Secret Passord
                 input(name='password' type='password').form-control.password
-              button(type='submit').btn.btn-default Sign In
+                if (signup && signup.error && signup.error.password)
+                  .error=signup.error.password
+              button(type='submit').btn.btn-primary Sign Up
+
+          .col-lg-6
+            h2 Sign in
+            form(method="post" action="/signin").form-horizontal
+              .form-group.col-lg-12
+                .form-group.col-lg-12
+                  label(for='name') Your Name
+                  input(name='name').form-control.name
+                .form-group.col-lg-12
+                  label(for='password') Your (not so) Secret Password
+                  input(name='password' type='password').form-control.password
+                .form-group.col-lg-12
+                  button(type='submit').btn.btn-primary Sign In
