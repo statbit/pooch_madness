@@ -18,6 +18,13 @@ a {
 .error {
   color: #d44950;
 }
+.navbar .nav .signup-btn a {
+  margin: 5px;
+  color: #fff;
+}
+.navbar .navbar-brand {
+  margin: 5px;
+}
 .dogs .panel-heading h1 {
   font-size: 30px;
 }
